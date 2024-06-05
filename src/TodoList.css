@@ -1,0 +1,155 @@
+/* src/TodoList.css */
+
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://e0.pxfuel.com/wallpapers/975/575/desktop-wallpaper-artstation-death-note-gabriel-marcondes-death-note-book.jpg");
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    min-height: 100vh; /* Ensure the container takes up the full viewport height */
+    padding: 20px; /* Add padding to give space for content */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+    
+}
+
+
+.todo-list {
+    flex: 1;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #218838;
+    
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ffffff;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    align-items: center;
+    font-weight: bold;
+}
+
+.todo-item.completed {
+    color: #000000;
+}
+
+.todo-item:hover {
+    background-color: #f1f1f141;
+}
+
+.todo-complete-button,
+.todo-remove-button {
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0.5rem;
+}
+
+.todo-remove-button {
+    background-color: #dc3545;
+}
+
+.todo-complete-button:hover{
+    background-color: #0056b3;
+}
+
+.todo-remove-button:hover{
+    background-color: #ad2d3a;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.541);
+}
+
+.todo-input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    
+}
+
+.todo-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 50rem;
+}
+
+.todo-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.todo-button:hover {
+    background-color: #218838;
+}
+
+.task{
+    width: 45%;
+    background-color: #6664642a;
+    height: 78vh;
+    margin-top: 0;
+    margin-top: -1.5rem;
+    margin-left: 1rem;
+    scrollbar-color: red;
+    margin-bottom: 2rem;
+}
+
+.task2{
+    width: 45%;
+    background-color: #6664642a;
+    height: 78vh;
+    margin-top: 0;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    float: right;
+    scrollbar-color: red;
+
+}
+
+.sub-task{
+    overflow-y: auto;
+    height: 60vh;
+    margin-top: 0;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    float: right;
+    scrollbar-color: red;
+    width: 90%;
+
+}
+
+.task h1{
+    padding-top: 2rem;
+}
+
