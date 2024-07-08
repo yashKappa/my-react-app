@@ -86,8 +86,9 @@ function TodoList() {
               onChange={handleInputChange}
               placeholder="Enter a new task"
             />
-            <button className="todo-button" onClick={handleAddTask}>Add Task</button>
-          </div>
+            <button className="todo-button" onClick={handleAddTask}>
+            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Logo_Death_Note.jpg/1200px-Logo_Death_Note.jpg'></img></button>
+            </div>
         </section>
       </div>
     </div>
