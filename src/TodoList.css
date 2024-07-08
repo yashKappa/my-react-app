@@ -99,20 +99,6 @@
     width: 50rem;
 }
 
-.todo-button {
-    padding: 10px 15px;
-    font-size: 16px;
-    color: white;
-    background-color: #28a745;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.todo-button:hover {
-    background-color: #218838;
-}
 
 .task{
     width: 45%;
