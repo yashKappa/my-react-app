@@ -40,6 +40,7 @@
 
 .todo-item.completed {
     color: #000000;
+    color: white;
 }
 
 .todo-item:hover {
@@ -175,20 +176,30 @@ h1{
 }
 
 
+/* src/TodoList.css */
+
 .toggle-button {
   padding: 10px 20px;
   font-size: 1em;
-  background-color: #007bff;
-  color: white;
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  margin: 0px 15px;
+  margin: -3px 10px;
+  background-color: rgba(255, 255, 255, 0.281);
+  border: 1px solid black;
+  backdrop-filter: blur(2px);
 }
 
 .toggle-button:hover {
   background-color: #0056b3;
+  color: white;
+}
+
+.toggle-button.active {
+    background-color: #007bff9f;
+    color: white;
 }
 
 .task-sections{
@@ -202,6 +213,18 @@ h1{
 }
 
 @media (max-width: 768px){
+
+    .todo-container {
+        background-image: url("https://i.redd.it/x3ccz198vh451.jpg");
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat;
+        box-sizing: border-box; /*  */
+        justify-content: center;
+        align-items: center;
+        
+    }
+
     .todo-input {
         flex: 1;
         padding: 10px;
@@ -244,4 +267,24 @@ h1{
         margin-left: -2rem;
         width: 100%;
     }
+
+    .toggle-button{
+        color: white;
+        border: 1px solid white;
+    }
+    
+    .todo-complete-button,
+    .todo-remove-button {
+    padding: 5px 10px;
+    background-color: #007bffa1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0.5rem;
+}
+.todo-remove-button {
+    background-color: #dc354685;
+}
 }

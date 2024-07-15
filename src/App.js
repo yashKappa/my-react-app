@@ -17,8 +17,12 @@ function TodoList() {
 
   // Save tasks and completed tasks to local storage whenever they change
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-    localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
+    if (tasks.length > 0 || completedTasks.length > 0) {
+      console.log('Saving tasks to local storage:', tasks);
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+      console.log('Saving completed tasks to local storage:', completedTasks);
+      localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
+    }
   }, [tasks, completedTasks]);
 
   const handleInputChange = (e) => {
