@@ -7,7 +7,6 @@ function TodoList() {
   const [task, setTask] = useState('');
   const [showCompleted, setShowCompleted] = useState(false);
 
-  // Load tasks and completed tasks from local storage on mount
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
     const storedCompletedTasks = JSON.parse(localStorage.getItem('completedTasks')) || [];
@@ -15,12 +14,9 @@ function TodoList() {
     setCompletedTasks(storedCompletedTasks);
   }, []);
 
-  // Save tasks and completed tasks to local storage whenever they change
   useEffect(() => {
     if (tasks.length > 0 || completedTasks.length > 0) {
-      console.log('Saving tasks to local storage:', tasks);
       localStorage.setItem('tasks', JSON.stringify(tasks));
-      console.log('Saving completed tasks to local storage:', completedTasks);
       localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
     }
   }, [tasks, completedTasks]);
@@ -32,7 +28,7 @@ function TodoList() {
   const handleAddTask = () => {
     if (task.trim()) {
       setTasks([...tasks, { text: task, completed: false }]);
-      setTask(''); // Clear input after adding
+      setTask('');
     }
   };
 
@@ -77,9 +73,11 @@ function TodoList() {
               {tasks.map((task, index) => (
                 <li key={index} className={`todo-item ${task.completed ? 'completed' : ''}`}>
                   <label>{task.text}</label>
-                  <div>
+                  <div className='butt'>
                     <button className="todo-complete-button" onClick={() => handleCompleteTask(index)}>Complete</button>
+                    <img onClick={() => handleCompleteTask(index)} src='https://png.pngtree.com/png-clipart/20230105/original/pngtree-green-check-mark-png-image_8873320.png' alt="Complete"/>
                     <button className="todo-remove-button" onClick={() => handleRemoveTask(index)}>Remove</button>
+                    <img onClick={() => handleRemoveTask(index)} src='https://png.pngtree.com/png-vector/20221215/ourmid/pngtree-wrong-icon-png-image_6525689.png' alt="Remove"/>
                   </div>
                 </li>
               ))}
@@ -94,6 +92,7 @@ function TodoList() {
                 <li key={index} className="todo-item completed">
                   <span>{task.text}</span>
                   <button className="todo-remove-button" onClick={() => handleRemoveCompletedTask(index)}>Remove</button>
+                  <img onClick={() => handleRemoveCompletedTask(index)} src='https://png.pngtree.com/png-vector/20221215/ourmid/pngtree-wrong-icon-png-image_6525689.png' alt="Remove"/>
                 </li>
               ))}
             </ul>
